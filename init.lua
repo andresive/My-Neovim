@@ -10,5 +10,12 @@ require('utils')
 -- arquivo de mapeamento de teclas
 require('mappings')
 
+-- show errors in .cs files on save file
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.cs",
+  callback = function()
+    vim.diagnostic.setloclist()
+  end,
+})
 
 
