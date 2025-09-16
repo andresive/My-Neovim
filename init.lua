@@ -18,4 +18,12 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufLeave", {
+  pattern = "*",
+  callback = function()
+    -- salva o buffer atual silenciosamente ao sair dele
+    vim.cmd("silent! write")
+  end,
+})
+
 
