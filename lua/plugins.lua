@@ -41,6 +41,12 @@ use {
   end
 }
 
+-- nvim treesitter for text colors
+use 'nvim-treesitter/nvim-treesitter';
+
+-- theme tokyonight
+use 'folke/tokyonight.nvim'
+
 -- nvim cmp for autocomplete 
 use 'neovim/nvim-lspconfig'
 use 'hrsh7th/cmp-nvim-lsp'

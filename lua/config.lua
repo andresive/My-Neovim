@@ -18,3 +18,4 @@ vim.api.nvim_set_hl(0, "NotifyINFOIcon", { fg = "#70F3FF" })
 notify("Welcome abord captain", 'info')
 notify("All sistems On-line")
 
+vim.cmd[[colorscheme tokyonight-night]]
