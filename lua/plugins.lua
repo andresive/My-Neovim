@@ -61,6 +61,11 @@ use({
 use 'saadparwaiz1/cmp_luasnip'
 use 'mason-org/mason.nvim'
 use 'mason-org/mason-lspconfig.nvim'
-use 'nvim-tree/nvim-web-devicons'
-end)
 
+-- plugin for more icons
+use 'nvim-tree/nvim-web-devicons'
+
+-- plugin for discord connection
+use 'andweeb/presence.nvim'
+end)
+-- usando um texto como teste
