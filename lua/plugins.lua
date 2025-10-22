@@ -61,5 +61,6 @@ use({
 use 'saadparwaiz1/cmp_luasnip'
 use 'mason-org/mason.nvim'
 use 'mason-org/mason-lspconfig.nvim'
+use 'nvim-tree/nvim-web-devicons'
 end)
 
