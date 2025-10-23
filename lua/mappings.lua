@@ -1,6 +1,6 @@
 
 -- comum shortcuts of nvim 
---
+
 -- shortcuts for save files
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR> | "+i', { noremap = true, silent = true})
@@ -54,7 +54,7 @@ vim.keymap.set('v', '<C-f>', '<Esc>:NvimTreeToggle<CR>',  {noremap = true})
 vim.keymap.set('n', '<C-t>', ':FloatermToggle<CR>', {noremap = true})
 vim.keymap.set('i', '<C-t>', '<Esc>:FloatermToggle<CR>', {noremap = true})
 vim.keymap.set('v', '<C-t>', '<Esc>:FloatermToggle<CR>', {noremap = true})
-vim.keymap.set('t', '<C-t>', 'exit<CR>', {noremap = true})
+vim.keymap.set('t', '<C-t>', 'exit<CR>', {noremap = true, silent = true})
 
 -- telescope file browser shortcuts
 
@@ -77,3 +77,25 @@ end
 vim.keymap.set('n', '<A-f>', closeTelescope, {noremap = true})
 vim.keymap.set('i', '<A-f>', closeTelescope, {noremap = true})
 vim.keymap.set('v', '<A-f>', closeTelescope, {noremap = true})
+
+-- function for toggle local list of errors
+
+local function LocalListVerify()
+    local localOpen = vim.fn.getloclist(0)
+    return #localOpen > 0
+end
+
+local function LocalListToggle() 
+    local locOpen = LocalListVerify()
+
+    if(locOpen) then
+        vim.cmd("lclose")
+    else 
+        vim.cmd("lopen")
+    end
+end
+
+-- local list toggle shortcut
+vim.keymap.set('n', '<A-s>', LocalListToggle, {noremap = true})
+vim.keymap.set('i', '<A-s>', LocalListToggle, {noremap = true})
+vim.keymap.set('v', '<A-s>', LocalListToggle, {noremap = true})
