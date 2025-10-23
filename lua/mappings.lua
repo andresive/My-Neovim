@@ -1,22 +1,40 @@
 
 -- comum shortcuts of nvim 
+--
 -- shortcuts for save files
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR> | "+i', { noremap = true, silent = true})
 vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>', { noremap = true })
+
+-- function for quit nvim even with nvim tree is open
+local function closeTree() 
+    local tree = require("nvim-tree.view")
+
+    -- verify if nvim tree is open 
+    if(tree.is_visible()) then
+        vim.cmd("NvimTreeClose | q")
+    else
+        vim.cmd("q")
+    end
+end
+
 -- quit shortcut
-vim.keymap.set('n', '<C-x>', ':q<CR>', {noremap = true})
-vim.keymap.set('i', '<C-x>', '<Esc>:q<CR>', {noremap = true})
-vim.keymap.set('v', '<C-x>', '<Esc>:q<CR>', {noremap = true})
+vim.keymap.set('n', '<C-x>', closeTree, {noremap = true})
+vim.keymap.set('i', '<C-x>', closeTree, {noremap = true})
+vim.keymap.set('v', '<C-x>', closeTree, {noremap = true})
+
 -- shortcut for copy
 vim.keymap.set('v', '<C-c>', '"+y', {noremap = true})
+
 -- shortcuts for paste
 vim.keymap.set('n', '<C-v>', '"+p', {noremap = true})
 vim.keymap.set('i', '<C-v>', '<Esc>"+p', {noremap = true})
+
 -- shortcuts for select all in file
 vim.keymap.set('n', '<C-a>', '"+ggVG', {noremap = true})
 vim.keymap.set('v', '<C-a>', '<Esc>"+ggVG', {noremap = true})
 vim.keymap.set('i', '<C-a>', '<Esc>"+ggVG', {noremap = true})
+
 -- shortcuts for revert modifications in file
 vim.keymap.set('i', '<C-z>', '<Esc>"+u | "+i', {noremap = true, silent = true})
 vim.keymap.set('n', '<C-z>', '"+u', {noremap = true})
