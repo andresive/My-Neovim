@@ -38,4 +38,24 @@ vim.keymap.set('i', '<C-t>', '<Esc>:FloatermToggle<CR>', {noremap = true})
 vim.keymap.set('v', '<C-t>', '<Esc>:FloatermToggle<CR>', {noremap = true})
 vim.keymap.set('t', '<C-t>', 'exit<CR>', {noremap = true})
 
+-- telescope file browser shortcuts
 
+-- function verify if telescope is open and return true or false
+local function telescopeOpen()
+    -- return if telescope is open
+    return vim.bo.filetype == "TelescopePrompt"
+end 
+
+local function closeTelescope() 
+    local verify = telescopeOpen();
+    
+    if(verify) then
+        vim.cmd("stopinsert | q!") -- comand for close telescope prompt
+    else
+        vim.cmd("Telescope file_browser") -- comand for open telescope prompt
+    end 
+end
+
+vim.keymap.set('n', '<A-f>', closeTelescope, {noremap = true})
+vim.keymap.set('i', '<A-f>', closeTelescope, {noremap = true})
+vim.keymap.set('v', '<A-f>', closeTelescope, {noremap = true})

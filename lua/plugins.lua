@@ -22,6 +22,13 @@ use {
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+
+-- plugin for file browser on telescope 
+use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+}
+
 -- bufferline plugin for open multiples files
 use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 -- tree for navigation for files
@@ -63,6 +70,7 @@ use({
 	-- install jsregexp (optional!:).
 	run = "make install_jsregexp"
 })
+
 -- cmp for luasnip
 use 'saadparwaiz1/cmp_luasnip'
 use 'mason-org/mason.nvim'
