@@ -6,6 +6,13 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
 vim.keymap.set('i', '<C-s>', '<Esc>:w<CR> | "+i', { noremap = true, silent = true})
 vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>', { noremap = true })
 
+
+-- function verify if telescope is open and return true or false
+local function telescopeOpen()
+    -- return if telescope is open
+    return vim.bo.filetype == "TelescopePrompt"
+end 
+
 -- function for quit nvim even with nvim tree is open
 local function closeTree() 
     local tree = require("nvim-tree.view")
@@ -28,7 +35,7 @@ vim.keymap.set('v', '<C-c>', '"+y', {noremap = true})
 
 -- shortcuts for paste
 vim.keymap.set('n', '<C-v>', '"+p', {noremap = true})
-vim.keymap.set('i', '<C-v>', '<Esc>"+p', {noremap = true})
+vim.keymap.set('i', '<C-v>', '<Esc>"+pa', {noremap = true})
 
 -- shortcuts for select all in file
 vim.keymap.set('n', '<C-a>', '"+ggVG', {noremap = true})
@@ -46,9 +53,9 @@ vim.keymap.set('v', '<C-q>', '<Esc>:Telescope find_files<CR>', {noremap = true})
 vim.keymap.set('i', '<C-q>', '<Esc>:Telescope find_files<CR>', {noremap = true})
 
 -- nvim Tree shortcuts
-vim.keymap.set('n', '<C-f>', ':NvimTreeToggle<CR>', {noremap = true})
-vim.keymap.set('i', '<C-f>', '<Esc>:NvimTreeToggle<CR>', {noremap = true})
-vim.keymap.set('v', '<C-f>', '<Esc>:NvimTreeToggle<CR>',  {noremap = true})
+vim.keymap.set('n', '<A-f>', ':NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('i', '<A-f>', '<Esc>:NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('v', '<A-f>', '<Esc>:NvimTreeToggle<CR>',  {noremap = true})
 
 -- Float term shortcuts
 vim.keymap.set('n', '<C-t>', ':FloatermToggle<CR>', {noremap = true})
@@ -57,12 +64,6 @@ vim.keymap.set('v', '<C-t>', '<Esc>:FloatermToggle<CR>', {noremap = true})
 vim.keymap.set('t', '<C-t>', 'exit<CR>', {noremap = true, silent = true})
 
 -- telescope file browser shortcuts
-
--- function verify if telescope is open and return true or false
-local function telescopeOpen()
-    -- return if telescope is open
-    return vim.bo.filetype == "TelescopePrompt"
-end 
 
 local function closeTelescope() 
     local verify = telescopeOpen();
@@ -74,9 +75,9 @@ local function closeTelescope()
     end 
 end
 
-vim.keymap.set('n', '<A-f>', closeTelescope, {noremap = true})
-vim.keymap.set('i', '<A-f>', closeTelescope, {noremap = true})
-vim.keymap.set('v', '<A-f>', closeTelescope, {noremap = true})
+vim.keymap.set('n', '<C-f>', closeTelescope, {noremap = true})
+vim.keymap.set('i', '<C-f>', closeTelescope, {noremap = true})
+vim.keymap.set('v', '<C-f>', closeTelescope, {noremap = true})
 
 -- function for toggle local list of errors
 
@@ -99,3 +100,9 @@ end
 vim.keymap.set('n', '<A-s>', LocalListToggle, {noremap = true})
 vim.keymap.set('i', '<A-s>', LocalListToggle, {noremap = true})
 vim.keymap.set('v', '<A-s>', LocalListToggle, {noremap = true})
+
+-- mark down render shortcut
+vim.keymap.set('n', '<C-m>', ':RenderMarkdown toggle<CR>', {noremap = true, silent = true})
+vim.keymap.set('i', '<C-m>', ':RenderMarkdown toggle<CR> | +i', {noremap = true, silent = true})
+vim.keymap.set('v', '<C-m>', ':RenderMarkdown toggle<CR>', {noremap = true, silent = true})
+
