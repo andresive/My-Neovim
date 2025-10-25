@@ -4,13 +4,13 @@ require'nvim-web-devicons'.setup {
  -- your personal icons can go here (to override)
  -- you can specify color or cterm_color instead of specifying both of them
  -- DevIcon will be appended to `name`
- override = {
-  zsh = {
+override = {
+    zsh = {
     icon = "",
     color = "#428850",
     cterm_color = "65",
     name = "Zsh"
-  }
+    }
  };
  -- globally enable different highlight colors per icon (default to true)
  -- if set to false all icons will have the default icon's color
@@ -34,31 +34,31 @@ require'nvim-web-devicons'.setup {
  -- same as `override` but specifically for overrides by filename
  -- takes effect when `strict` is true
  override_by_filename = {
-  [".gitignore"] = {
+    [".gitignore"] = {
     icon = "",
     color = "#f1502f",
     name = "Gitignore"
-  }
+    }
  };
  -- same as `override` but specifically for overrides by extension
  -- takes effect when `strict` is true
- override_by_extension = {
-  ["log"] = {
-    icon = "",
-    color = "#81e043",
-    name = "Log"
-  }
- };
+    override_by_extension = {
+        ["log"] = {
+        icon = "",
+        color = "#81e043",
+        name = "Log"
+        }
+    };
  -- same as `override` but specifically for operating system
  -- takes effect when `strict` is true
- override_by_operating_system = {
-  ["apple"] = {
+override_by_operating_system = {
+    ["apple"] = {
     icon = "",
     color = "#A2AAAD",
     cterm_color = "248",
     name = "Apple",
-  },
- };
+    },
+};
 }
 
 -- STALINE CONFIG
@@ -322,10 +322,16 @@ require("telescope").setup {
       hijack_netrw = true,
       mappings = {
         ["i"] = {
-          -- your custom insert mode mappings        
+          -- your custom insert mode mappings
+          ["<C-f>"] = false,
+          ["<A-f>"] = false,
+          ["<C-q>"] = false,
         },
         ["n"] = {            
           -- your custom normal mode mappings
+          ["<C-f>"] = false,
+          ["<A-f>"] = false,
+          ["<C-q>"] = false,
         },
       },
     },
