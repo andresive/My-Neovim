@@ -2,9 +2,9 @@
 -- comum shortcuts of nvim 
 
 -- shortcuts for save files
-vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true })
-vim.keymap.set('i', '<C-s>', '<Esc>:w<CR> | "+i', { noremap = true, silent = true})
-vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>', { noremap = true })
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true})
+vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true})
 
 
 -- function verify if telescope is open and return true or false
@@ -53,9 +53,9 @@ vim.keymap.set('v', '<C-q>', '<Esc>:Telescope find_files<CR>', {noremap = true})
 vim.keymap.set('i', '<C-q>', '<Esc>:Telescope find_files<CR>', {noremap = true})
 
 -- nvim Tree shortcuts
-vim.keymap.set('n', '<A-f>', ':NvimTreeToggle<CR>', {noremap = true})
-vim.keymap.set('i', '<A-f>', '<Esc>:NvimTreeToggle<CR>', {noremap = true})
-vim.keymap.set('v', '<A-f>', '<Esc>:NvimTreeToggle<CR>',  {noremap = true})
+vim.keymap.set('n', '<C-f>', ':NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('i', '<C-f>', '<Esc>:NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('v', '<C-f>', '<Esc>:NvimTreeToggle<CR>',  {noremap = true})
 
 -- Float term shortcuts
 vim.keymap.set('n', '<C-t>', ':FloatermToggle<CR>', {noremap = true})
@@ -75,9 +75,9 @@ local function closeTelescope()
     end 
 end
 
-vim.keymap.set('n', '<C-f>', closeTelescope, {noremap = true})
-vim.keymap.set('i', '<C-f>', closeTelescope, {noremap = true})
-vim.keymap.set('v', '<C-f>', closeTelescope, {noremap = true})
+vim.keymap.set('n', '<A-f>', closeTelescope, {noremap = true})
+vim.keymap.set('i', '<A-f>', closeTelescope, {noremap = true})
+vim.keymap.set('v', '<A-f>', closeTelescope, {noremap = true})
 
 -- function for toggle local list of errors
 
@@ -106,3 +106,15 @@ vim.keymap.set('n', '<C-m>', ':RenderMarkdown toggle<CR>', {noremap = true, sile
 vim.keymap.set('i', '<C-m>', ':RenderMarkdown toggle<CR> | +i', {noremap = true, silent = true})
 vim.keymap.set('v', '<C-m>', ':RenderMarkdown toggle<CR>', {noremap = true, silent = true})
 
+-- trouble plugin shortcuts
+-- diagnostics
+vim.keymap.set('n', '<C-e>', ':Trouble diagnostics toggle<CR>', {noremap = true, silent = true})
+vim.keymap.set('i', '<C-e>', ':Trouble diagnostics toggle<CR>', {noremap = true, silent = true})
+vim.keymap.set('v', '<C-e>', ':Trouble diagnostics toggle<CR>', {noremap = true, silent = true})
+-- symbols / structure of file 
+vim.keymap.set('n', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, silent =true})
+vim.keymap.set('i', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, silent =true})
+vim.keymap.set('v', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, silent =true})
+
+-- hover plugin sortcut
+vim.keymap.set("n", "K", require("hover").hover, { desc = "hover info" })

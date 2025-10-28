@@ -68,7 +68,7 @@ use({
 	-- follow latest release.
 	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 	-- install jsregexp (optional!:).
-	run = "make install_jsregexp"
+	run = "make install_jsregexp", 
 })
 
 -- cmp for luasnip
@@ -98,9 +98,41 @@ use({
     run = function() vim.fn["mkdp#util#install"]() end,
 })
 
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
 -- plugin for discord connection
 use 'andweeb/presence.nvim'
+
+-- plugin for scroll barr on files
+use 'dstein64/nvim-scrollview'
+
+-- plugin for diagnostic lsp 
+use {
+  "folke/trouble.nvim",
+  requires = "nvim-tree/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {}
+  end
+}
+
+-- hover plugim 
+use "lewis6991/hover.nvim"
+
+-- plugin for info inline
+use({
+  "rachartier/tiny-inline-diagnostic.nvim",
+  config = function()
+    require("tiny-inline-diagnostic").setup({
+      -- Exemplo de opções:
+      preset = "amongus",
+      options = {
+        show_source = true,
+        update_in_insert = true,
+        refresh_on_insert_mode = true,
+      },
+    })
+  end
+})
+
+
 end)
--- usando um texto como teste
+
+
