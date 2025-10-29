@@ -466,28 +466,4 @@ require("tiny-inline-diagnostic").setup({
     },
 })
 
-require("hover").setup({
-  init = function()
-    -- Ativa provedores (LSP é o principal)
-    require("hover.providers.lsp")
-    require("hover.providers.man")
-    require("hover.providers.dictionary")
-  end,
 
-  -- Opções visuais da janela de hover
-  preview_opts = {
-    border = "rounded", -- opções: none, single, double, rounded, solid, shadow
-  },
-
-  title = true, -- mostra o título na janela (nome da fonte)
-})
-
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    -- só tenta abrir se um cliente LSP estiver anexado
-    local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
-    if #clients > 0 then
-      require("hover").hover()
-    end
-  end,
-})

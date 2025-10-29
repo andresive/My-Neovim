@@ -21,4 +21,4 @@ notify("All sistems On-line")
 vim.cmd[[colorscheme tokyonight-night]]
 
 vim.o.mousemoveevent = true -- ativa eventos de movimento do mouse
-vim.o.updatetime = 800      -- tempo de inatividade (ms) para acionar CursorHold
+vim.o.updatetime = 1200      -- tempo de inatividade (ms) para acionar CursorHold

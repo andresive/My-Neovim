@@ -113,9 +113,6 @@ use {
   end
 }
 
--- hover plugim 
-use "lewis6991/hover.nvim"
-
 -- plugin for info inline
 use({
   "rachartier/tiny-inline-diagnostic.nvim",
