@@ -6,7 +6,7 @@ vim.cmd("set nu!")
 vim.cmd("set termguicolors")
 
 -- tab spaces modification
-vim.opt.tabstop = 4      -- Número de espaços que um Tab representa
+vim.opt.tabstop = 3     -- Número de espaços que um Tab representa
 vim.opt.shiftwidth = 4   -- Número de espaços usados para indentação automática
 vim.opt.softtabstop = 1  -- Número de espaços ao pressionar Tab em modo de inserção
 vim.opt.expandtab = true -- Converte Tab em espaços

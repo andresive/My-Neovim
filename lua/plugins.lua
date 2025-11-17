@@ -13,8 +13,11 @@ return require('packer').startup(function(use)
 	  "windwp/nvim-autopairs",
 	  event = "InsertEnter",
 	  config = function()
-	  require("nvim-autopairs").setup {}
-end
+	  require("nvim-autopairs").setup({
+        fast_wrap = {},
+        disable_filetype = { "TelescopePrompt", "vim" },
+    }) 
+    end
 }
 -- telescope for search files 
 use {
@@ -129,6 +132,12 @@ use({
   end
 })
 
+ use({
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup()
+    end,
+  })
 
 end)
 

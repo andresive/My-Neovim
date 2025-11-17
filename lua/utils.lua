@@ -466,4 +466,16 @@ require("tiny-inline-diagnostic").setup({
     },
 })
 
+-- conform for use formater code with mason
+-- setup for conform plugin for formating code 
+require("conform").setup({
+  formatters_by_ft = {
+    cs = { "lsp" }, -- Use o CSharpier para arquivos C#
+  },
+  format_on_save = {
+    lsp_fallback = true,  -- Se o CSharpier falhar, tenta o LSP (OmniSharp)
+    async = false,
+  },
+
+})
 

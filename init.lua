@@ -19,6 +19,7 @@ require('mappings')
 --    end,
 --    })
 
+-- saves the file to alter file on buffer
 vim.api.nvim_create_autocmd("BufLeave", {
   pattern = "*",
   callback = function()
@@ -27,4 +28,11 @@ vim.api.nvim_create_autocmd("BufLeave", {
   end,
 })
 
+--format csharp file on save 
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.cs", -- set on .cs file 
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
+})
 

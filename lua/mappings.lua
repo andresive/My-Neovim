@@ -117,5 +117,7 @@ vim.keymap.set('i', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, sil
 vim.keymap.set('v', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, silent =true})
 
 -- visual to insert mode shortcut 
-vim.keymap.set("v", 'i', '<Esc>i', {noremap = true})
+vim.keymap.set("v", '<S-i>', '<Esc>i', {noremap = true})
 
+-- insertmode to visual mode shortcut 
+vim.keymap.set('i', '<S-v>', '<Esc>v', {noremap = true})
