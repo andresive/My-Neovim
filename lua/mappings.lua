@@ -3,8 +3,8 @@
 
 -- shortcuts for save files
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
-vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true})
-vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true})
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>"+i', { noremap = true, silent = true})
+vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>"+i', { noremap = true, silent = true})
 
 
 -- function verify if telescope is open and return true or false
