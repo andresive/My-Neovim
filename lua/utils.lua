@@ -476,6 +476,7 @@ require("conform").setup({
     css = { "prettier" },
     json = { "prettier" },
     markdown = { "prettier" },
+    cs = { "csharpier" },
     },
 })
 

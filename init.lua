@@ -28,6 +28,14 @@ vim.api.nvim_create_autocmd("BufLeave", {
   end,
 })
 
+-- white spaces show caracters config test
+vim.opt.list = true
+vim.opt.listchars = {
+    space = '·',   -- mostra espaços no meio
+    tab = '→ ',    -- mostra tab
+    trail = '•',
+}
+
 --format csharp file on save 
 --vim.api.nvim_create_autocmd("BufWritePre", {
 --    pattern = "*.cs", -- set on .cs file 
@@ -36,3 +44,12 @@ vim.api.nvim_create_autocmd("BufLeave", {
 --    end,
 --})
 
+-- this code is optional if you not use csharp or no use csharpier for format your
+-- code delete code below 
+-- format on csharpier on save file
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.cs", -- only .cs files 
+    callback = function()
+        require("conform").format()
+    end,
+})
