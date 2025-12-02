@@ -111,13 +111,13 @@ vim.keymap.set('v', '<C-m>', ':RenderMarkdown toggle<CR>', {noremap = true, sile
 vim.keymap.set('n', '<C-e>', ':Trouble diagnostics toggle<CR>', {noremap = true, silent = true})
 vim.keymap.set('i', '<C-e>', '<Esc>:Trouble diagnostics toggle<CR>', {noremap = true, silent = true})
 vim.keymap.set('v', '<C-e>', ':Trouble diagnostics toggle<CR>', {noremap = true, silent = true})
+
 -- symbols / structure of file 
 vim.keymap.set('n', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, silent =true})
 vim.keymap.set('i', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, silent =true})
 vim.keymap.set('v', '<C-h>', ':Trouble symbols toggle<CR>', {noremap = true, silent =true})
 
--- visual to insert mode shortcut 
-vim.keymap.set("v", '<S-i>', '<Esc>i', {noremap = true})
-
--- insertmode to visual mode shortcut 
-vim.keymap.set('i', '<S-v>', '<Esc>v', {noremap = true})
+-- visual mode to insert mode shortcut 
+vim.keymap.set('v', '<A-i>', '<Esc>"+i', {noremap = true, silent = true})
+-- insert mode to visual mode shortcut 
+vim.keymap.set('i', '<A-v', '<Esc>"+v', {noremap = true, silent = true})

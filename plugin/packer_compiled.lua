@@ -142,7 +142,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-mini/mini.nvim"
   },
   ["nvim-autopairs"] = {
-    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0\15\0\0\1\0\0\0\2+\0\2\0L\0\2\0\26\0\0\1\0\1\0\2'\0\0\0L\0\2\0\15<CR><ESC>Oø\2\1\0\t\0\20\1-6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\0016\0\0\0'\2\a\0B\0\2\0026\1\0\0'\3\1\0B\1\2\0029\2\b\0014\4\3\0\18\5\0\0'\a\t\0'\b\n\0B\5\3\2\18\a\5\0009\5\v\0053\b\f\0B\5\3\2\18\a\5\0009\5\r\0053\b\14\0B\5\3\2\18\a\5\0009\5\15\0053\b\16\0B\5\3\2\18\a\5\0009\5\17\5)\b\0\0B\5\3\2\18\a\5\0009\5\18\0053\b\19\0B\5\3\0?\5\0\0B\2\2\1K\0\1\0\0\19replace_map_cr\24set_end_pair_length\0\fwith_cr\0\14with_move\0\14with_pair\5\6{\14add_rules\24nvim-autopairs.rule\21disable_filetype\1\3\0\0\20TelescopePrompt\bvim\14fast_wrap\1\0\0\nsetup\19nvim-autopairs\frequire\3€€À™\4\0" },
+    config = { "\27LJ\2\n†\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\21disable_filetype\1\3\0\0\20TelescopePrompt\bvim\14fast_wrap\1\0\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -258,22 +258,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: startup.nvim
-time([[Config for startup.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0", "config", "startup.nvim")
-time([[Config for startup.nvim]], false)
--- Config for: tiny-inline-diagnostic.nvim
-time([[Config for tiny-inline-diagnostic.nvim]], true)
-try_loadstring("\27LJ\2\n¤\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\3\16show_source\2\27refresh_on_insert_mode\2\21update_in_insert\2\1\0\1\vpreset\famongus\nsetup\27tiny-inline-diagnostic\frequire\0", "config", "tiny-inline-diagnostic.nvim")
-time([[Config for tiny-inline-diagnostic.nvim]], false)
--- Config for: conform.nvim
-time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
-time([[Config for conform.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
+-- Config for: conform.nvim
+time([[Config for conform.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
+time([[Config for conform.nvim]], false)
+-- Config for: tiny-inline-diagnostic.nvim
+time([[Config for tiny-inline-diagnostic.nvim]], true)
+try_loadstring("\27LJ\2\n¤\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\foptions\1\0\3\16show_source\2\27refresh_on_insert_mode\2\21update_in_insert\2\1\0\1\vpreset\famongus\nsetup\27tiny-inline-diagnostic\frequire\0", "config", "tiny-inline-diagnostic.nvim")
+time([[Config for tiny-inline-diagnostic.nvim]], false)
+-- Config for: startup.nvim
+time([[Config for startup.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0", "config", "startup.nvim")
+time([[Config for startup.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
