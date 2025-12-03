@@ -10,7 +10,6 @@ require('utils')
 -- arquivo de mapeamento de teclas
 require('mappings')
 
-
 -- show errors in .cs files on save file
 --    vim.api.nvim_create_autocmd("BufWritePost", {
 --    pattern = "*.cs",
@@ -43,6 +42,15 @@ vim.opt.listchars = {
 --        vim.lsp.buf.format({ async = false })
 --    end,
 --})
+
+-- comand for save file on open for format code and active LSP client
+-- on open .cs file if you not use .cs file delete below 
+vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = "*.cs",
+    callback = function()
+        vim.cmd("silent! write")
+    end, 
+})
 
 -- this code is optional if you not use csharp or no use csharpier for format your
 -- code delete code below 
