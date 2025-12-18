@@ -240,6 +240,7 @@ require("mason-lspconfig").setup({
 local lspconfig = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+-- ENABLE LSP CLIENT 
 vim.lsp.enable('omnisharp')
 
 -- the presence discord connetion plugin Setup 
