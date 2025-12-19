@@ -1,7 +1,7 @@
 # My Neovim 
-this is my plugins and cofiguration for programing in csharp and edit text or everything files with neovim
-
-this file contain the basic for you install my config and plugins 
+this is my plugins and cofiguration for programing in csharp and edit text or everything files with neovim,
+this file contain the basic for you install my config and plugins. I hope you like it.
+If you find errors or bugs try correct these and send a pull request. And thanks 
 
 ## Dependencies
 
@@ -22,17 +22,29 @@ this file contain the basic for you install my config and plugins
 
 Before you downloaded neovim with correct version and downloaded the plugin manager 
 
-1. Go to your nvim directory normally the default path is ~/.config/nvim 
+1. Go to your nvim directory normally the default path is ~/.config/nvim
 
->If the directory is not created you can create these on manual way with this command "mkdir ~/.config/nvim"
+`cd ~/.config/nvim`
+
+>If the directory is not created you can create these on manual way with command below
 >Before you verify that directory is created 
 
-2. Clone my project with "git clone https://github.com/andresive/My-Neovim.git ~/.config/nvim"
+`mkdir ~/.config/nvim`
 
-3. Open your neovim and run command ":Packer Install"
+2. Clone my project with this command:
 
-4. Im recomended you run nvim command ":Packer Compile"
+`git clone https://github.com/andresive/My-Neovim.git ~/.config/nvim`
 
-5. Run the nvim command ":Packer Sync" to update plugins 
+3. Open your neovim and run command `:Packer Install`
+
+4. Im recomended you run nvim command `:Packer Compile`
+
+5. Run the nvim command `:Packer Sync` to update plugins 
 
 And enjoy my config thanks for Install MyNeovim
+
+### Note
+If you tested my project on Windows and these is not work, you can run it on WSL (Windows Subsystem linux)
+im tested, but this is unstable on some windows like from the telescope plugin, this not turn unusable. 
+If this happens to you clear the terminal and open nvim again, these bug ocurred normally when you use mouse 
+with Telescope windows opened.
