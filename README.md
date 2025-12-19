@@ -11,9 +11,9 @@ If you find errors or bugs try correct these and send a pull request. And thanks
 
 - NeoVim version: 0.10.0+
 
->Most plugins depend of this neovim version not recomend you Download on old version
+>Most plugins depend of this neovim version not recommend you Download it on old version
 
-- Plugin Manager: [Packer.nvim](https://github.com/wbthomason/packer.nvim "Link for Packer Github")
+- Plugin Manager: [Packer.nvim](http[Packer.s://github.com/wbthomason/packer.nvim "Link for Packer Github")
 
 >Follow the install instructions on github repository to install the plugin manager.
 >Github link above
@@ -27,19 +27,20 @@ Before you downloaded neovim with correct version and downloaded the plugin mana
 `cd ~/.config/nvim`
 
 >If the directory is not created you can create these on manual way with command below
->Before you verify that directory is created 
 
 `mkdir ~/.config/nvim`
 
+
+>Before you verify that directory is created
 2. Clone my project with this command:
 
 `git clone https://github.com/andresive/My-Neovim.git ~/.config/nvim`
 
-3. Open your neovim and run command `:Packer Install`
+3. Open your neovim and run command `:PackerInstall`
 
-4. Im recomended you run nvim command `:Packer Compile`
+4. Im recomended you run nvim command `:PackerCompile`
 
-5. Run the nvim command `:Packer Sync` to update plugins 
+5. Run the nvim command `:PackerSync` to update plugins 
 
 And enjoy my config thanks for Install MyNeovim
 
