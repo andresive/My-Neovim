@@ -53,9 +53,9 @@ vim.keymap.set('v', '<C-q>', '<Esc>:Telescope find_files<CR>', {noremap = true})
 vim.keymap.set('i', '<C-q>', '<Esc>:Telescope find_files<CR>', {noremap = true})
 
 -- nvim Tree shortcuts
-vim.keymap.set('n', '<C-f>', ':NvimTreeToggle<CR>', {noremap = true})
-vim.keymap.set('i', '<C-f>', '<Esc>:NvimTreeToggle<CR>', {noremap = true})
-vim.keymap.set('v', '<C-f>', '<Esc>:NvimTreeToggle<CR>',  {noremap = true})
+vim.keymap.set('n', '<A-f>', ':NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('i', '<A-f>', '<Esc>:NvimTreeToggle<CR>', {noremap = true})
+vim.keymap.set('v', '<A-f>', '<Esc>:NvimTreeToggle<CR>',  {noremap = true})
 
 -- Float term shortcuts
 vim.keymap.set('n', '<C-t>', ':FloatermToggle<CR>', {noremap = true})
@@ -75,9 +75,9 @@ local function closeTelescope()
     end 
 end
 
-vim.keymap.set('n', '<A-f>', closeTelescope, {noremap = true})
-vim.keymap.set('i', '<A-f>', closeTelescope, {noremap = true})
-vim.keymap.set('v', '<A-f>', closeTelescope, {noremap = true})
+vim.keymap.set('n', '<C-f>', closeTelescope, {noremap = true})
+vim.keymap.set('i', '<C-f>', closeTelescope, {noremap = true})
+vim.keymap.set('v', '<C-f>', closeTelescope, {noremap = true})
 
 -- function for toggle local list of errors
 
