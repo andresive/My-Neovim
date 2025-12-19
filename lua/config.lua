@@ -22,3 +22,9 @@ vim.cmd[[colorscheme tokyonight-night]]
 
 vim.o.mousemoveevent = true -- ativa eventos de movimento do mouse
 vim.o.updatetime = 1200      -- tempo de inatividade (ms) para acionar CursorHold
+
+-- config for nvim markdown preview not close on exit page 
+vim.g.mkdp_auto_close = 0
+vim.g.mkdp_command_for_global = 1 
+vim.g.mkdp_open_to_the_world = 0
+
