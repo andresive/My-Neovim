@@ -11,7 +11,7 @@ File that nvim identify as starting point and load all configurations and plugin
 but is better organize code with separated files for better view and organization of project and 
 code maintenance
 
-- **[Init documentation](init.md)** <br>
+- **[Init documentation](files/init.md)** <br>
 - **[Init lua file](../init.lua)**
 
 ## Custom commands 
@@ -27,7 +27,7 @@ if necessary or according to your needs
 All shortcuts stay in this file if you need modify some shortcuts you find the code in this 
 file if command not stay on these you create the shortcut and enjoy your custom shortcut
 
-- **[Shortcuts documentation](shortcuts.md)** <br>
+- **[Shortcuts documentation](files/shortcuts.md)** <br>
 - **[Shortcuts lua file](../lua/mappings.lua)**
 
 ## Config
@@ -36,7 +36,7 @@ This file contains the base configuration for nvim and some plugins for example 
 the size of tab for more white spaces or you dont want to spaces show caracteres like 
 dot in this file you find these configurations to modify
 
-- **[Config documentation](config.md)** <br>
+- **[Config documentation](files/config.md)** <br>
 - **[Config lua file](../lua/config.lua)**
 
 ## Plugins
@@ -45,7 +45,7 @@ Contains all plugins used on this project with packer function for detect plugin
 documentation file im place all github links of plugins if you need read the documentation of 
 some plugin or you need know the function of any plugin
 
-- **[Plugins documentation](plugins.md)** <br>
+- **[Plugins documentation](files/plugins.md)** <br>
 - **[Plugins lua file](../lua/plugins.lua)** 
 
 ## Utils 
@@ -54,5 +54,5 @@ File for plugins configuration setup for basic config of all plugins and custon 
 stay in these file if you not like some action of some plugin you maybe modify this action 
 editing this file 
 
-- **[Utils documentation](utils.md)** <br>
+- **[Utils documentation](files/utils.md)** <br>
 - **[Utils lua file](../lua/utils.lua)**
