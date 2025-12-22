@@ -152,16 +152,16 @@ require("ibl").setup {
 require('notify').setup({
 	  stages = "slide",
 	  fps = 60,
-	  render = "compact",
+	  render = "default",
 	  timeout = 2000
 })
 
--- CMP config
 local cmp = require('cmp')
+-- CMP config
 cmp.setup({
-snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
         -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
@@ -174,9 +174,10 @@ snippet = {
         -- cmp.resubscribe({ "TextChangedI", "TextChangedP" })
         -- require("cmp.config").set_onetime({ sources = {} })
       end,
+
     },
     window = {
-      completion = cmp.config.window.bordered(),
+      -- completion = cmp.config.window.bordered(),
       -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
@@ -187,45 +188,58 @@ snippet = {
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      --{ name = 'vsnip' }, -- For vsnip users.
-      { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
+            { name = 'nvim_lsp' },
+            { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'snippy' }, -- For snippy users.
+        },
+        {
+            { name = 'buffer' },
     })
-  })
+})
 
-  -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
-  -- Set configuration for specific filetype.
-  --[[ cmp.setup.filetype('gitcommit', {
+-- CMP git (optional plugin)
+-- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
+-- Set configuration for specific filetype.
+--[[ cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
-      { name = 'git' },
-    }, {
-      { name = 'buffer' },
+        { name = 'git' },
+    }, 
+    {
+        { name = 'buffer' },
     })
- })
- require("cmp_git").setup() ]]-- 
+})
+require("cmp_git").setup() ]]--
 
-  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline({ '/', '?' }, {
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
+        { name = 'buffer' }
     }
-  })
+})
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
+        { name = 'path' }
+    }, 
+    {
+        { name = 'cmdline' }
     }),
     matching = { disallow_symbol_nonprefix_matching = false }
-  })
+})
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+vim.lsp.config('omnisharp', {
+    capabilities = capabilities
+})
+-- acitvated LSP 
+vim.lsp.enable('omnisharp')
 
 -- Setup Mason
 require("mason").setup()
@@ -239,10 +253,6 @@ require("mason-lspconfig").setup({
 -- Setup lspconfig
 local lspconfig = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
--- ENABLE LSP CLIENT 
-vim.lsp.enable('omnisharp')
-
 
 -- Treesitter setup config
 require'nvim-treesitter.configs'.setup {
@@ -397,10 +407,10 @@ require("tiny-inline-diagnostic").setup({
 
         -- Enable diagnostics display in insert mode
         -- May cause visual artifacts; consider setting throttle to 0 if enabled
-        enable_on_insert = false,
+        enable_on_insert = true,
 
         -- Enable diagnostics display in select mode (e.g., during auto-completion)
-        enable_on_select = false,
+        enable_on_select = true,
 
         -- Handle messages that exceed the window width
         overflow = {
