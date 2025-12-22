@@ -56,13 +56,17 @@ use 'nvim-treesitter/nvim-treesitter';
 -- theme tokyonight
 use 'folke/tokyonight.nvim'
 
--- nvim cmp for autocomplete 
+-- for LSP config
 use 'neovim/nvim-lspconfig'
+
+-- nvim cmp for autocomplete 
 use 'hrsh7th/cmp-nvim-lsp'
 use 'hrsh7th/cmp-buffer'
 use 'hrsh7th/cmp-path'
 use 'hrsh7th/cmp-cmdline'
 use 'hrsh7th/nvim-cmp'
+-- cmp for luasnip
+use 'saadparwaiz1/cmp_luasnip'
 
 -- luasnip for snippets
 use({
@@ -73,8 +77,7 @@ use({
 	run = "make install_jsregexp", 
 })
 
--- cmp for luasnip
-use 'saadparwaiz1/cmp_luasnip'
+-- Mason plugin for download LSP clients and more
 use 'mason-org/mason.nvim'
 use 'mason-org/mason-lspconfig.nvim'
 
@@ -128,6 +131,7 @@ use({
   end
 })
 
+-- plugin for code formater
  use({
     "stevearc/conform.nvim",
     config = function()
