@@ -100,9 +100,6 @@ use({
     run = function() vim.fn["mkdp#util#install"]() end,
 })
 
--- plugin for discord connection
-use 'andweeb/presence.nvim'
-
 -- plugin for scroll barr on files
 use 'dstein64/nvim-scrollview'
 
