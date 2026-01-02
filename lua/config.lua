@@ -16,7 +16,17 @@ vim.notify = require("notify")
 vim.notify("Welcome abord captain", 'info', {title = "Info",})
 vim.notify("All sistems On-line", 'info', {title = "Info",})
 
-vim.cmd[[colorscheme tokyonight-night]]
+-- theme configuration 
+require("tokyonight").setup({
+    style = "night",
+    transparent = true,
+    styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+    },
+})
+
+vim.cmd.colorscheme("tokyonight")
 
 vim.o.mousemoveevent = true -- ativa eventos de movimento do mouse
 vim.o.updatetime = 1200      -- tempo de inatividade (ms) para acionar CursorHold
